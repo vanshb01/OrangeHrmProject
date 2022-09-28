@@ -25,15 +25,7 @@ public class LoginTestCase extends baseTest{
 		
 	}
 }
-	
-//	@DataProvider
-//	public Object[][] testData() {
-//		return new Object[][] { 
-//			    { "Testing with invalid data","aadmin", "admin123" },
-//				{ "Testing with invalid data","123 ", " 123" },
-//				{ "Testing with valid data","Admin", "XwFwrZ28@Y" } };
-//	}
-	
+
 	
 
 

@@ -44,7 +44,6 @@ public class SearchPage extends baseTest {
 	                return true;
 	            }
 	        }
-
 	        return false;
 	    }
 }

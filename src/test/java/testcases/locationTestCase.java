@@ -7,9 +7,7 @@ import com.aventstack.extentreports.Status;
 import pages.LocationPage;
 import pages.dashboardPage;
 
-
 public class locationTestCase extends baseTest {
-	//loginPage objLogin;
 	LocationPage objLocation;
 	dashboardPage objDashboard;
 	@Test(dataProvider="testData")
@@ -39,7 +37,7 @@ public class locationTestCase extends baseTest {
 	@DataProvider
 	public Object[][] testData() {
 		return new Object[][] { 
-			    { "New York Dunder mifflin","New York","8464876121","100001","United States","Alaska"},
+			    { "Ghaziabad","New York","9205660160","100002","United States","Alaska"},
 				 };
 	}
   

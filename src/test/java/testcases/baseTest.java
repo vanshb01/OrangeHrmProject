@@ -36,7 +36,6 @@ public class baseTest {
 	public static  ExtentReports extent ;
 	public static ExtentTest test;
 	
-	
 	@BeforeTest
 	public void before() {
 		spark = new ExtentSparkReporter("ExtentSpark.html");
@@ -44,12 +43,10 @@ public class baseTest {
 		extent.attachReporter(spark);
 		
 	}
-		
 		@AfterTest
 		public void after() {
 			extent.flush();
 		}
-		
 	 @BeforeMethod
 	 public void beforeMethod(Method method) {
 		 test= extent.createTest(method.getName());
@@ -72,19 +69,20 @@ public class baseTest {
 			obj.login(prop.getProperty("username"), prop.getProperty("password"));
 			Thread.sleep(2000);
 			
-		}catch(FileNotFoundException e){
+		}
+		catch(FileNotFoundException e)
+		{
 			e.printStackTrace();
-		}catch(IOException e) {
+		}
+		catch(IOException e)
+		{
 			e.printStackTrace();
 		}	
 }
-	
-	
 	@AfterClass
 	public void close() {
 		driver.close();
 	}
-
 	public void verifyCurrentUrl(String url) {
 		if(!url.equals(driver.getCurrentUrl())){
 			test.log(Status.FAIL,"Current URL:"
@@ -97,17 +95,13 @@ public class baseTest {
 			}
 		
 	}
-	
-	//Reusable method
 	public void waitAndClick(By element){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         driver.findElement(element).click();
     }
-	
 	public void waitTillClickable(By element){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
 }

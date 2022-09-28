@@ -10,7 +10,6 @@ import testcases.baseTest;
 public class EmployeePage extends baseTest{
   WebDriver driver;
   
-  //WebElements on the Employee page
   By addbtn = By.xpath("//a[@id=\"addEmployeeButton\"]//i");
   By firstName= By.id("first-name-box");
   By lastName= By.id("last-name-box");
@@ -26,7 +25,6 @@ public class EmployeePage extends baseTest{
 	  this.driver=driver;
   }
   
-  //function to add new Employee details and save them as well
   public void addEmp(String NAME, String LNAME, String DATE, String OFFICE) throws InterruptedException {
 	  waitAndClick(addbtn);
 	  WebDriverWait wait = new WebDriverWait(driver,3);
@@ -41,23 +39,20 @@ public class EmployeePage extends baseTest{
 	  Thread.sleep(3000);
 	  waitAndClick(employeeManagementButton);
   }
-  
-  //for selecting location from dropdown
+
   public void selectLocation(String office) throws InterruptedException
 	{
 		driver.findElement(location).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText(office)).click();
 	}
-  
-//Clear default filters from the page
+
   public void clearFilters() throws InterruptedException {
       waitAndClick(goBack);
       waitAndClick(empFilter);
       waitAndClick(filterSearch);
   }
-  
-//Verify that Employee has been added
+
   public Boolean verifyEmployee(String name , String location) throws InterruptedException {
       SearchPage search = new SearchPage(driver);
       return search.searchEmp(name , location);

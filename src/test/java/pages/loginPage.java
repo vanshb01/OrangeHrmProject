@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class loginPage {
 	WebDriver driver;
-
 	By email=By.id("txtUsername");
 	By password= By.id("txtPassword");
 	By login=By.xpath("//div//button");
@@ -16,8 +15,6 @@ public class loginPage {
 		System.out.println(driver.getTitle());
 		
 	}
-	
-
 	public dashboardPage login(String user, String pass) throws InterruptedException{
 		 WebDriverWait wait = new WebDriverWait(driver,2);
 		  WebElement element = wait.until(ExpectedConditions.visibilityOf(driver.findElement(email)));
